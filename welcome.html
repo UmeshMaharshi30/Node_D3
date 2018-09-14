@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <title>Market Maker D3</title>
+<head>
+    <script src="lib/d3.v5.js"></script>
+    <script src="lib/outreach.js"></script>
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+    <script >
+            function init() {
+                var apples = o.generateObject();
+                apples.title = "Apple Market Details";  
+                apples.xLabel = "year";
+                apples.xKey = "Year";
+                apples.yLabel = "Production lbs";
+                apples.yKey = "Value";
+                apples.dataUrl = "data/apples.csv";
+                apples.dataType = "csv";
+                apples.data = null;
+                apples.containerId = "apples";
+                apples.graphDimentions = [800, 600];  
+                o.multilineChart(apples);
+                apples.containerId = "appGrp";
+                o.groupedSTackBar(apples);
+                var strawberries = o.generateObject();
+                strawberries.containerId = "strawGrp";
+                strawberries.title = "Strawberries Harvest Data";
+                strawberries.xLabel = "year";
+                strawberries.xKey = "Year";
+                strawberries.yLabel = "Acres";
+                strawberries.yKey = "Value";
+                strawberries.dataUrl = "data/clean_straw.csv";
+                strawberries.dataType = "csv";
+                strawberries.data = null;
+                strawberries.graphDimentions = [800, 600];  
+                o.groupedSTackBar(strawberries);
+            }
+    </script>
+    <style type="text/css">
+        /* .axis--x path {  display: none;  } */
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+div {
+    margin: 10px;
+}
+        
+        </style>
+</head>    
+<body onload="init()">
+
+<h1>Market Maker D3</h1>
+<div id="strawGrp"></div>
+<div id="apples"></div>
+<div id="appGrp"></div>
+
+</body>
+</html>

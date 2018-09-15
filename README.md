@@ -1,6 +1,6 @@
 # Node_D3
 
-This project is an example on how to use jsdom and d3.
+This project is an example on how to use jsdom and d3
 
 ## Getting Started
 
@@ -15,11 +15,14 @@ This project is an example on how to use jsdom and d3.
 
 
 ## Running the tests
-// use this to run
+# use this to run
+
 node index.js
 
-On successful run it should create files "output.pdf" and "output.svg". 
+On successful run it will create files "output.pdf" and "output.svg". 
+
 "output.svg" file contains the svg of the data viz
+
 "output.pdf" file contains the pdf with svg in it
 
 ## Authors

@@ -4,6 +4,7 @@ This project is an example on how to use jsdom and d3
 
 ## Getting Started
 
+Go through index.js for better understanding of the code
 
 ### Prerequisites
 

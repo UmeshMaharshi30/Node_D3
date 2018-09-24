@@ -55,10 +55,13 @@ o.groupedSTackBar(apples, svgContainer);
 // creating an empty pdf file
 var doc = new kit();
 doc.pipe(fs.createWriteStream('output.pdf'));
-
+let svgContent = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' + body.select('svg').html() + '</svg>';
+svgContent = svgContent.replace(/currentColor/g, 'black');
+//console.log(svgContent);
+//console.log('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' + body.html() + '</svg');
 // use body.html() for getting the svg of the data viz
-svgtopdf(doc, body.html(), 20, 20);
+svgtopdf(doc,  svgContent, 20, 20, {useCSS:true});
 
 doc.end();
 
-fs.writeFileSync(outputLocation, body.html());                
+//fs.writeFileSync(outputLocation, body.html());                
